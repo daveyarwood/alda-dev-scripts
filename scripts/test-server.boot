@@ -1,13 +1,13 @@
 #!/usr/bin/env boot
 
 (set-env! :dependencies '[[cheshire          "5.6.3"]
-                          [org.zeromq/jeromq "0.3.5"]])
+                          [org.zeromq/jeromq "0.4.0"]])
 
 (require '[cheshire.core :as json])
 (import '[org.zeromq ZMQ ZContext ZMsg])
 
 (def frontend-msgs
-  (let [jsons [{:command "parse" :body "piano: c8 d e f g2" :options {:as "lisp"}}
+  (let [jsons [{:command "parse" :body "piano: c8 d e f g2"}
                {:command "ping"}
                {:command "status"}
                {:command "version"}]]
